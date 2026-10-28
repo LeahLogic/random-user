@@ -1,0 +1,143 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f3f0ea;
+  font-family: Arial, sans-serif;
+  color: #273b43;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.app {
+  width: 100%;
+  max-width: 650px;
+  text-align: center;
+}
+
+.subtitle {
+  color: #b8a58e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+h1 {
+  margin: 12px 0;
+  font-family: Georgia, serif;
+  font-size: 44px;
+  font-weight: 500;
+}
+
+.description {
+  margin-bottom: 30px;
+  color: #7d8587;
+  font-size: 15px;
+}
+
+.profile-card {
+  min-height: 350px;
+  padding: 35px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 15px 45px rgba(39, 59, 67, 0.08);
+}
+
+.profile-image {
+  display: block;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 20px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #f3f0ea;
+}
+
+h2 {
+  margin: 10px 0;
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.profile-card p {
+  color: #7d8587;
+  font-size: 15px;
+}
+
+.profile-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #e9e4dd;
+  text-align: left;
+}
+
+.profile-details p {
+  margin: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+.profile-details strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #b8a58e;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+button {
+  margin-top: 30px;
+  padding: 17px 40px;
+  background-color: #273b43;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #45616b;
+  transform: translateY(-3px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 34px;
+  }
+
+  .profile-card {
+    padding: 25px 20px;
+  }
+
+  .profile-details {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
