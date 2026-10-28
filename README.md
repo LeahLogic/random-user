@@ -13,7 +13,6 @@ Discover people from around the world with a single click, without refreshing th
 - Display profile pictures, names, ages, and contact information
 - Show the user's city and country
 - Display a loading indicator during API requests
-- Handle API request errors
 - Disable the button while fetching data
 - Responsive design for desktop and mobile devices
 

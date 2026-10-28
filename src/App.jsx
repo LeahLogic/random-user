@@ -5,39 +5,22 @@ import './App.css';
 class App extends Component {
   state = {
     user: null,
-    loading: false,
-    error: ''
+    loading: false
   };
 
   getUser = async () => {
     this.setState({
-      loading: true,
-      error: ''
+      loading: true
     });
 
-    try {
-      const response = await fetch('https://randomuser.me/api/');
+    const url = 'https://randomuser.me/api/';
+    const response = await fetch(url);
+    const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch user');
-      }
-
-      const data = await response.json();
-
-      this.setState({
-        user: data.results[0]
-      });
-    } catch (error) {
-      console.error(error);
-
-      this.setState({
-        error: 'Could not load a profile. Please try again.'
-      });
-    } finally {
-      this.setState({
-        loading: false
-      });
-    }
+    this.setState({
+      user: data.results[0],
+      loading: false
+    });
   };
 
   componentDidMount() {
@@ -45,7 +28,7 @@ class App extends Component {
   }
 
   render() {
-    const { user, loading, error } = this.state;
+    const { user, loading } = this.state;
 
     return (
       <div className="app">
@@ -57,8 +40,6 @@ class App extends Component {
 
         <div className="profile-card">
           {loading && <p>Loading profile...</p>}
-
-          {error && <p>{error}</p>}
 
           {user && (
             <div>
